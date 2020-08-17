@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+<head>
+<title> Registration page </title>
+    <script type="text/javascript">
+function validateRegistration(){
+var email = document.getElementById("Email").value;
+var reg =  /^\w+@\w+/;
+var userID= document.getElementById('UserID').value;
+var userIdReg = /^[0-9]+$/;
+var flagEmail=false;
+var flagUserID=false;
+var flagPhone=false;
+var PhoneReg = /^[0-9]+$/;
+var phone=document.getElementById('Num').value;
+var passWord=document.getElementById('passWord').value;
+var passReg = /^[a-zA-Z]\w{3,14}$/;
+var flagPass= false;
+if(passWord.match(passReg)){
+    
+    flagPass=true;
+}
+else{
+    alert("Pass word has incorrect format");
+    flagPass=false;
+}
+if( (phone.match(PhoneReg)) &&  (phone.length===10)){
+    flagPhone=true;
+}
+else{
+    alert("wrong PhoneNumber Formate");
+    flagPhone=false;
+}
+if(email.match(reg)){
+ flagEmail=true;
+}
+else {
+alert("wrong email id");
+flagEmail= false;
+}
+if((userID.match(userIdReg)) &&(userID.length===8)){
+flagUserID= true;
+}
+else {
+alert("wrong UserId id");
+flagUserID= false;
+}
+if(flagUserID && flagEmail && flagPhone){
+    return true;
+
+}
+else{return false;}
+} 
+
+
+</script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                <link rel="stylesheet" href="register.css">
+                <style>
+                    body{
+background: #00c9ff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #00c9ff, #92fe9d); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(90deg, #00c9ff, #92fe9d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+		
+option{color:black;}
+                    
+                </style>
+</head>
+
+
+
+<body>
+
+
+<center> <h4> Complete the form below to register </h3> </center>
+
+<center>
+		  <div class="card" style="color:white;" >
+    <div class="card-body" style="width:400px">
+
+<form method = "post" action="Register"  onsubmit= " return validateRegistration()"  >
+<div class="form-group">
+	<label for="UserName"> UserId:<span class="glyphicon glyphicon-user"></span></label> 
+	<input type="text" class="form-control" id="UserID" name="UID"> 
+	</div>
+	
+	
+	<div class="form-group">
+	<label for="password"> PassWord:<span class="glyphicon glyphicon-lock"></span> </label> 
+	<input type="password" class="form-control" id="passWord" name="pW"> <br>
+	</div>
+	
+	<div class="form-group">
+	<label for="FirstName"> First Name:<span class="glyphicon glyphicon-user"></label> 
+	<input type="text" class="form-control" id="firstName" name="fname" > 
+	</div>
+
+	<div class="form-group">
+	<label for="LastName"> Last Name:<span class="glyphicon glyphicon-user"></label> 
+	<input type="text" class="form-control" id="LastName" name="Lname" > <br>
+	</div>
+	
+<div class="form-group">	
+  <label for="Gender">Select your Gender:</label>
+  <select id="Gender" name="gen" >
+  
+  <option value="Male">Male</option>
+  <option value="Female">Female</option>
+ 
+  </select>
+ 
+</div>
+
+<div class="form-group">
+  <label for="course">Select your Course:</label>
+  <select id="course" name="cor">
+  <option value="java">Java</option>
+  <option value="c++">C++</option>
+  <option value="javascript">JavaScript</option>
+  </select>
+  </div>
+  
+    
+	<div class="form-group">
+	<label for="Email"> Email: <span class="glyphicon glyphicon-envelope"></span></label>
+	<input type="text" class="form-control" id="Email" name="email" > <br>
+	</div>
+	
+	<div class="form-group">
+	<label for="PhoneNumber"> Number:<span class="glyphicon glyphicon-phone"></span></label>
+	<input type="text" class="form-control" id="Num" name="num" > <br>
+    </div>
+
+
+
+	<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+</div>
+</div>
+</center>
+
+
+</body>
+
+
+
+
+
+
+
+
+
+</html>

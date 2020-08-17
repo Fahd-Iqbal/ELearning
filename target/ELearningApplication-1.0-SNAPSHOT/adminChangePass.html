@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+    <script type="text/javascript">
+   
+    
+    function ValidateAdminPass(){
+        
+        
+    var newAdminPass=document.getElementById("Anewpass").value;
+    
+    var adminRetype=document.getElementById("Areenter").value;
+    var passReg = /^[a-zA-Z]\w{3,14}$/;
+    
+    
+    
+    if(newAdminPass.match(passReg)){
+    if(newAdminPass===adminRetype){ // === is used to check type and values as well 
+	return true;
+	
+	}
+	else{
+	 alert("Entered PassWord and Retyped PassWord Do not match");
+	 return false;
+	}
+}
+else{
+    alert("Pass word has incorrect format");
+    return false;
+}
+    
+        
+    }
+  
+    
+    
+    
+    
+    </script>
+        
+        
+        
+        <h2>Admin Change Password Page</h2>
+
+<form method="post" action="changeAdminPassWordServlet" onsubmit= "return ValidateAdminPass()" >
+  <label for="oldPass">Old Pass Word:</label><br>
+  <input type="text" id="Aoldpass" name="Aoldp"  required ><br>
+  
+  <label for="newPass">New PassWprd:</label><br>
+  <input type="text" id="Anewpass" name="Anewp"  ><br><br>
+  
+  <label for="reEnter">Re Type New PassWprd:</label><br>
+  <input type="text" id="Areenter" name="Anp" ><br>
+  <input type="submit" value="Submit">
+</form> 
+        
+        
+    </body>
+</html>

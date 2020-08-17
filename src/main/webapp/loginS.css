@@ -1,0 +1,42 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 6, 2020, 8:26:51 PM
+    Author     : fahd_
+*/
+
+.centered-cstm {
+    padding-top: 25vh;
+}
+
+.card-body {
+    margin: 0 auto;
+    border: 3px solid #000;
+    padding: 20px;
+    border-radius: 20px;
+    background: aliceblue
+}
+
+body {
+    background: #3a3a3a;
+   /* For browsers that do not support gradients */
+    background-image: radial-gradient(circle,  #f1f2b5, #135058 );
+}
+
+.card-body th {
+    background: navajowhite;
+}
+
+
+a.button1:hover {
+    transform: scale(5.2);
+    transform: scale(1.5);
+}
+
+
+a.button1 {
+    display: block;
+}
